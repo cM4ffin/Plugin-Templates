@@ -13,9 +13,7 @@ repositories {
     }
 }
 
-loom {
-    accessWidenerPath = file("src/main/resources/${project.plugin_id}.accesswidener")
-}
+loom { accessWidenerPath = file("src/main/resources/${project.plugin_id}.accesswidener") }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -37,7 +35,7 @@ jar {
     manifest {
         attributes(
             'MixinConfigs': "mixins.${project.plugin_id}.json",
-            '3arthh4ckConfig': "${project.plugin_name}Config.json"
+            '3arthh4ckConfig': "${project.plugin_id}Config.json"
         )
     }
 }
