@@ -8,7 +8,7 @@ import net.minecraft.client.MinecraftClient;
 
 // The main class of the plugin
 @SuppressWarnings("unused")
-public class PluginExample implements Plugin {
+public class ExamplePlugin implements Plugin {
 
     // This is always at the start of the game
     @Override
