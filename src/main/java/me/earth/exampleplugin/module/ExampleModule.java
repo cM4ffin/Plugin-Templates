@@ -29,15 +29,17 @@ public class ExampleModule extends Module {
     public ExampleModule() {
         super("ExampleModule", Category.Client);
 
-        // A simple listener that prints "hello!!" to the chat every tick
+        // A simple listener that prints the text setting to the chat every tick
         this.listeners.add(new LambdaListener<>(TickEvent.class, e -> {
-            // Check if the player and world are not null
-            if (mc.player != null && mc.world != null) {
-                // Check if the chat setting is enabled
-                if (chatMessage.getValue()) {
-                    // Print the message in the minecraft chat
-                    ChatUtil.sendMessage(text.getValue()); // Get the value of the text setting
-                }
+            // Check if the player/world is null
+            if (mc.player == null || mc.world == null) {
+                return;
+            }
+
+            // Check if the chat setting is enabled
+            if (chatMessage.getValue()) {
+                // Print the message in the minecraft chat
+                ChatUtil.sendMessage(text.getValue()); // Get the value of the text setting
             }
         }));
 

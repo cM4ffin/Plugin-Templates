@@ -17,8 +17,8 @@ public class ListenerRender extends ModuleListener<ExampleModule, Render3DEvent>
     // This method is called when the event is fired
     @Override
     public void invoke(Render3DEvent event) {
-        // Check if the world is not null
-        if (mc.world == null) {
+        // Check if the player/world is null
+        if (mc.player == null || mc.world == null) {
             return;
         }
 
